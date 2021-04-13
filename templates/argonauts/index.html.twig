@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+			{% block body %}
+
+
+				<!-- New member form -->
+				<h2>Ajouter un(e) Argonaute</h2>
+				<form class="new-member-form" action="{{path('add_argonaut')}}">
+					<label for="name">Nom de l&apos;Argonaute</label>
+					<input id="name" name="name" type="text" placeholder="Charalampos"/>
+					<button type="submit">Envoyer</button>
+				</form>
+
+				<!-- Member list -->
+				<h2>Membres de l'équipage</h2>
+				<section class="member-list container w-50 h-auto">
+                <div class="row mx-auto">
+                {% for argonaut in argonauts %}
+					<div class="member-item col-4 text-center">{{argonaut.name}}</div>
+                {% endfor %}
+                </div>
+				</section>
+			</main>
+{% endblock %}
