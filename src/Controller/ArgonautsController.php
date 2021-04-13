@@ -9,14 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ArgonautsController extends AbstractController
 {
     /**
      * @Route("/", name="app_index")
      */
-    public function index(ArgonautRepository $argoRepo, Request $request): Response
+    public function index(ArgonautRepository $argoRepo): Response
     {
         $argonauts = $argoRepo->findAll();
 
